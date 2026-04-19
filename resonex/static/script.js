@@ -1,5 +1,5 @@
 // Global Variables
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = '/api';
 const UPDATE_INTERVAL = 1000; // 1 second
 let charts = {};
 let devices = {};
