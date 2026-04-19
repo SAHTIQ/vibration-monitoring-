@@ -5,8 +5,14 @@ import random
 import time
 from datetime import datetime
 
-app = Flask(__name__)
-CORS(app)
+app = Flask(__name__, static_folder='static', template_folder='templates')
+CORS(app, resources={
+    r"/api/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "DELETE", "OPTIONS"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 
 # Store devices and their data
 devices = {}
